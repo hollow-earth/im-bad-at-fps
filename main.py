@@ -16,10 +16,10 @@ def gaussian(x, mu, sigma):
 plt.title("My K/D (μ={0:.2f}, σ={1:.2f}) vs. My Opponents' K/D (μ={2:.2f}, σ={3:.2f})".format(myDataAverage, myDataStdDev, generalDataAverage, generalDataStdDev))
 plt.xlabel("K/D Ratio")
 plt.ylabel("Count")
-plt.hist(myData, bins = rangeBins, label = "My K/D", color = "yellow")
-plt.plot(myData, gaussian(myData, myDataAverage, myDataStdDev), color = "orange")                                            # Uncomment after enough data has been acquired
 plt.hist(generalData, bins = rangeBins, label= "Opponents' K/D", color = "cyan")
-plt.plot(generalData, gaussian(generalData, generalDataAverage, generalDataStdDev), color = "blue")                        # Uncomment after enough data has been acquired
+plt.hist(myData, bins = rangeBins, label = "My K/D", color = "red")
+plt.plot(generalData, gaussian(generalData, generalDataAverage, generalDataStdDev), color = "blue")
+plt.plot(myData, gaussian(myData, myDataAverage, myDataStdDev), color = "orange")
 plt.xlim(0,4)
 plt.legend()
 plt.show()
