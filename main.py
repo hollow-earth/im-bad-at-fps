@@ -1,8 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-myData = np.loadtxt("data.csv", delimiter=",", skiprows=1, usecols=(0), max_rows = 23, encoding="utf-8")    # Change max_rows according to length to ignore empty cells
+myData = np.loadtxt("data.csv", delimiter=",", skiprows=1, usecols=(0), max_rows = 33, encoding="utf-8")    # Change max_rows according to length to ignore empty cells
 generalData = np.loadtxt("data.csv", delimiter=",", skiprows=1, usecols=(1), encoding="utf-8")
+
+myData = np.sort(myData)
+generalData = np.sort(generalData)
 
 rangeBins = np.array(range(0,401))/100
 myDataAverage = np.average(myData)
